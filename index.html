@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NQ Dance | Elite Online Dance Instruction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chewy&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nerko+One&family=Oswald:wght@200..700&family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=WDXL+Lubrifont+TC&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .cursive {
+            font-family: 'Pacifico', cursive;
+        }
+        .font-league-spartan {
+            font-family: 'League Spartan', sans-serif;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #f472b6;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        .hero {
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 100%);
+            z-index: -1;
+        }
+        .neon-pink-text {
+            color: white;
+            text-shadow: 
+                0 0 5px #ff1493,
+                0 0 10px #ff1493,
+                0 0 15px #ff1493,
+                0 0 20px #ff1493;
+        }
+        .glow-hover {
+            transition: all 0.3s ease;
+        }
+        .glow-hover:hover {
+            box-shadow: 
+                0 0 20px #ff1493,
+                0 0 40px #ff1493,
+                0 0 60px #ff1493;
+            transform: translateY(-5px);
+        }
+        .image-glow-hover {
+            transition: all 0.3s ease;
+        }
+        .image-glow-hover:hover {
+            filter: drop-shadow(0 0 20px #ff1493) drop-shadow(0 0 40px #ff1493);
+            transform: scale(1.05);
+        }
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .neon-pink {
+            color: #ec4899;
+            text-shadow: 
+                0 0 5px #ec4899,
+                0 0 10px #ec4899,
+                0 0 15px #ec4899,
+                0 0 20px #ec4899;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 
+                0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.04),
+                0 0 20px rgba(236, 72, 153, 0.6),
+                0 0 40px rgba(236, 72, 153, 0.4);
+        }
+        .glow-hover {
+            transition: all 0.3s ease;
+        }
+        .glow-hover:hover {
+            box-shadow: 
+                0 0 20px rgba(236, 72, 153, 0.8),
+                0 0 40px rgba(236, 72, 153, 0.6),
+                0 0 60px rgba(236, 72, 153, 0.4);
+            transform: scale(1.02);
+        }
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.95) 100%);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .faq-item {
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .faq-question {
+            transition: all 0.3s ease;
+        }
+        .faq-question:hover {
+            color: #be185d;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        .faq-answer.active {
+            max-height: 300px;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #be185d 0%, #9d174d 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #be185d;
+            color: #be185d;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background: #be185d;
+            color: white;
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        /* Mobile Hero Improvements */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 100vh;
+                padding-top: 80px;
+            }
+            .hero-content {
+                text-align: center;
+                padding: 2rem 1rem;
+            }
+            .neon-pink-text {
+                font-size: 2.5rem;
+                line-height: 1.2;
+                margin-bottom: 1.5rem;
+            }
+            .hero-description {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+            .hero-image {
+                margin-top: 2rem;
+                max-width: 250px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <header class="fixed w-full bg-black shadow-sm z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <img src="/Images/Logo.jpg" alt="NQ Dance Logo" class="h-12 w-auto">
+            </a>
+            <div id="desktop-menu" class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium">Home</a>
+                <a href="#about" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium">About</a>
+                <a href="#classes" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium">Classes</a>
+                <a href="#testimonials" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium">Testimonials</a>
+                <a href="#faq" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium">FAQ</a>
+                <a href="#contact" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden fixed top-0 left-0 w-full h-full bg-black z-40">
+            <div class="flex justify-between items-center p-6">
+                <img src="/Images/Logo.jpg" alt="NQ Dance Logo" class="h-12 w-auto">
+                <button id="mobile-menu-close" class="text-white focus:outline-none">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div class="flex flex-col space-y-6 px-6 pt-8">
+                <a href="#home" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium text-xl mobile-nav-link">Home</a>
+                <a href="#about" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium text-xl mobile-nav-link">About</a>
+                <a href="#classes" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium text-xl mobile-nav-link">Classes</a>
+                <a href="#testimonials" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium text-xl mobile-nav-link">Testimonials</a>
+                <a href="#faq" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium text-xl mobile-nav-link">FAQ</a>
+                <a href="#contact" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium text-xl mobile-nav-link">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero min-h-screen flex items-center pt-20">
+        <video autoplay muted loop class="hero-video">
+            <source src="/Images/hero section.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center relative z-10">
+            <div class="md:w-1/2 fade-in hero-content">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl cursive neon-pink-text mb-6 md:mb-10">Transform Your Body. Elevate Your Spirit.</h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-6 md:mb-8 hero-description">Online dance classes led by internationally acclaimed choreographer Nubia Quintana. From Rio Carnaval to Radio City — now in your home.</p>
+                <a href="#classes" class="btn-primary text-white px-6 md:px-8 py-3 rounded-full text-base md:text-lg font-semibold inline-block">🎥 Start Dancing with Nubia</a>
+            </div>
+            <div class="md:w-1/2 mt-8 md:mt-12 md:mt-0 flex justify-center fade-in">
+                <div class="relative w-full max-w-xs md:max-w-md hero-image">
+                    <div class="absolute -inset-4 bg-pink-700 rounded-full opacity-50 blur-md"></div>
+                    <img src="/Images/Logo.jpg" alt="Nubia dancing" class="relative rounded-full w-full h-auto shadow-xl image-glow-hover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl cursive text-center text-gray-800 mb-16 fade-in">About Nubia</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 fade-in">
+                    <img src="/Images/Logo.jpg" alt="Nubia Quintana" class="glow-hover rounded-lg shadow-xl w-full h-auto">
+                </div>
+                <div class="md:w-1/2 md:pl-12 fade-in">
+                    <p class="text-lg text-gray-600 mb-6">Nubia Quintana has led over 60 dancers at NBC Universal's Radio City event, performed with Mystic India – The World Tour, and was a Top 40 finalist on So You Think You Can Dance Australia.</p>
+                    <p class="text-lg text-gray-600 mb-6">Her signature energy, artistry, and feedback make her a sought-after instructor worldwide. With a unique blend of technical precision and emotional expression, Nubia creates transformative dance experiences.</p>
+                    <p class="text-lg text-gray-600 mb-8">Trained in multiple disciplines from classical ballet to Brazilian samba, Nubia's teaching philosophy centers on empowerment through movement, helping students discover their unique artistic voice.</p>
+                    <a href="#classes" class="btn-secondary px-8 py-3 rounded-full text-lg font-semibold inline-block">Explore Classes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classes Section -->
+    <section id="classes" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl cursive text-center text-gray-800 mb-16 fade-in">Dance With Purpose</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Class Card 1 -->
+                <div class="card-hover glow-hover bg-white rounded-xl overflow-hidden shadow-lg fade-in">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="p-6">
+                        <h3 class="text-3xl cursive text-gray-800 mb-3">🌟 Samba Foundations</h3>
+                        <p class="text-gray-600 mb-4">Build a powerful base in Brazilian samba with structured lessons focusing on technique, rhythm, and cultural context.</p>
+                        <a href="#" class="btn-primary text-white px-6 py-2 rounded-full text-sm font-semibold inline-block">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Class Card 2 -->
+                <div class="card-hover glow-hover bg-white rounded-xl overflow-hidden shadow-lg fade-in">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/3622614/pexels-photo-3622614.jpeg');"></div>
+                    <div class="p-6">
+                        <h3 class="text-3xl cursive text-gray-800 mb-3">🔥 Performance Level</h3>
+                        <p class="text-gray-600 mb-4">Develop your presence, stamina, and stage confidence with advanced choreography and performance techniques.</p>
+                        <a href="#" class="btn-primary text-white px-6 py-2 rounded-full text-sm font-semibold inline-block">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Class Card 3 -->
+                <div class="card-hover glow-hover bg-white rounded-xl overflow-hidden shadow-lg fade-in">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/8206738/pexels-photo-8206738.jpeg');"></div>
+                    <div class="p-6">
+                        <h3 class="text-3xl cursive text-gray-800 mb-3">🌍 Global Grooves</h3>
+                        <p class="text-gray-600 mb-4">Fusion styles from Afro-Latin to funk — expressive and bold movements that celebrate global dance traditions.</p>
+                        <a href="#" class="btn-primary text-white px-6 py-2 rounded-full text-sm font-semibold inline-block">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Class Card 4 -->
+                <div class="card-hover glow-hover bg-white rounded-xl overflow-hidden shadow-lg fade-in">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="p-6">
+                        <h3 class="text-3xl cursive text-gray-800 mb-3">💻 Private Coaching</h3>
+                        <p class="text-gray-600 mb-4">1:1 custom feedback and routines from Nubia herself, tailored to your goals and skill level.</p>
+                        <a href="#" class="btn-primary text-white px-6 py-2 rounded-full text-sm font-semibold inline-block">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+       <!-- Info Section with Parallax -->
+    <section id="info" class="py-32 parallax" style="background-image: url('https://images.unsplash.com/photo-1514525253161-7a3d1a5d1f1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 bg-white bg-opacity-90 backdrop-filter backdrop-blur-sm rounded-xl p-8 shadow-lg fade-in">
+                    <h2 class="text-5xl cursive text-gray-800 mb-6">Carnaval to Carnegie</h2>
+                    <p class="text-lg text-gray-600 mb-4">Nubia has danced elite roles in Rio Carnaval and led over 300 international dancers through the parade. Her performances blend technical mastery with raw emotional power.</p>
+                    <p class="text-lg text-gray-600 mb-4">She's been seen in Off-Broadway shows, global commercials, and holds a Bachelor of Nursing and NYC acting certification — a dynamic force in dance and beyond.</p>
+                    <p class="text-lg text-gray-600">Nubia's unique background allows her to teach with anatomical precision while nurturing each dancer's artistic expression.</p>
+                </div>
+                <div class="lg:w-1/2 fade-in">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-pink-700 rounded-lg opacity-30 blur-lg"></div>
+                        <img src="/Images/info.jpg" alt="Dance Info" class="relative rounded-lg shadow-2xl w-full h-auto object-cover image-glow-hover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl cursive text-center text-gray-800 mb-16 fade-in">Dancer Stories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="testimonial-card rounded-xl p-8 fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-pink-700 flex items-center justify-center text-pink-100 mr-4">
+                            <i class="fas fa-quote-left text-xl"></i>
+                        </div>
+                        <h4 class="text-xl cursive text-gray-800">Isabelle M.</h4>
+                    </div>
+                    <p class="text-gray-600 italic">"I've never felt more empowered dancing online. Nubia's energy is magic - she sees exactly what each student needs and delivers it with such warmth. After just 3 months, I'm dancing with confidence I never thought possible."</p>
+                </div>
+                <div class="testimonial-card rounded-xl p-8 fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-pink-700 flex items-center justify-center text-pink-100 mr-4">
+                            <i class="fas fa-quote-left text-xl"></i>
+                        </div>
+                        <h4 class="text-xl cursive text-gray-800">Tasha R.</h4>
+                    </div>
+                    <p class="text-gray-600 italic">"It's not just dancing — it's a spiritual and physical experience! Nubia creates a space where you can truly express yourself. Her technical corrections are so precise, yet she makes you feel like an artist first. Life-changing."</p>
+                </div>
+                <div class="testimonial-card rounded-xl p-8 fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-pink-700 flex items-center justify-center text-pink-100 mr-4">
+                            <i class="fas fa-quote-left text-xl"></i>
+                        </div>
+                        <h4 class="text-xl cursive text-gray-800">Marcus L.</h4>
+                    </div>
+                    <p class="text-gray-600 italic">"As a professional dancer, I've trained with many instructors, but Nubia's approach is revolutionary. Her understanding of movement mechanics combined with her artistic vision is unparalleled. My technique has improved dramatically."</p>
+                </div>
+                <div class="testimonial-card rounded-xl p-8 fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-pink-700 flex items-center justify-center text-pink-100 mr-4">
+                            <i class="fas fa-quote-left text-xl"></i>
+                        </div>
+                        <h4 class="text-xl cursive text-gray-800">Sophia K.</h4>
+                    </div>
+                    <p class="text-gray-600 italic">"The way Nubia breaks down complex movements makes them accessible to everyone. I started as a complete beginner and now I'm performing with confidence. Her classes are the highlight of my week - joyful, challenging, and transformative."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-5xl cursive text-center text-gray-800 mb-16 fade-in">Your Questions</h2>
+            
+            <div class="faq-item mb-6 fade-in">
+                <div class="faq-question cursor-pointer flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-800">❓ Do I need prior experience?</h3>
+                    <i class="fas fa-chevron-down text-pink-400 transition-transform duration-300"></i>
+                </div>
+                <div class="faq-answer px-4">
+                    <p class="py-4 text-gray-600">Not at all! We offer classes for complete beginners through advanced professionals. Our foundational courses are designed to help absolute newcomers feel comfortable and make progress quickly, while our more advanced classes challenge experienced dancers to refine their technique.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item mb-6 fade-in">
+                <div class="faq-question cursor-pointer flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-800">❓ Are these live or recorded?</h3>
+                    <i class="fas fa-chevron-down text-pink-400 transition-transform duration-300"></i>
+                </div>
+                <div class="faq-answer px-4">
+                    <p class="py-4 text-gray-600">Both! You'll get access to our premium video library with hundreds of recorded classes across all levels and styles. We also offer live virtual classes multiple times per week where you can get real-time feedback from Nubia and connect with other students. Many students combine both for maximum flexibility and learning.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item mb-6 fade-in">
+                <div class="faq-question cursor-pointer flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-800">❓ What equipment do I need?</h3>
+                    <i class="fas fa-chevron-down text-pink-400 transition-transform duration-300"></i>
+                </div>
+                <div class="faq-answer px-4">
+                    <p class="py-4 text-gray-600">Just a device with internet access and enough space to move safely! For optimal experience, we recommend:
+                    <ul class="list-disc pl-5 mt-2 space-y-1">
+                        <li>A computer/tablet with a large enough screen to see demonstrations</li>
+                        <li>Comfortable clothing that allows movement</li>
+                        <li>A yoga mat for floor work (optional)</li>
+                        <li>Dance shoes or socks with grips for certain styles (we'll advise)</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="faq-item mb-6 fade-in">
+                <div class="faq-question cursor-pointer flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-800">❓ Can I get personalized feedback?</h3>
+                    <i class="fas fa-chevron-down text-pink-400 transition-transform duration-300"></i>
+                </div>
+                <div class="faq-answer px-4">
+                    <p class="py-4 text-gray-600">Absolutely! In live classes, Nubia provides real-time corrections. For recorded classes, you can submit videos for critique through our exclusive student portal. Our private coaching sessions offer the most intensive personalized feedback, with custom choreography and training plans tailored to your goals.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item fade-in">
+                <div class="faq-question cursor-pointer flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-800">❓ What's your cancellation policy?</h3>
+                    <i class="fas fa-chevron-down text-pink-400 transition-transform duration-300"></i>
+                </div>
+                <div class="faq-answer px-4">
+                    <p class="py-4 text-gray-600">We offer flexible cancellation options because we understand life happens! For single classes, you can cancel up to 24 hours in advance for a full refund. Monthly memberships can be paused or canceled anytime before your next billing cycle. Private sessions require 48 hours notice for rescheduling or cancellation without charge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 bg-pink-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl cursive text-center text-gray-800 mb-16 fade-in">Join Our Dance Family</h2>
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <h3 class="text-3xl cursive text-gray-800 mb-6">Get In Touch</h3>
+                    <p class="text-gray-600 mb-6">Have questions about which class is right for you? Want to discuss private coaching? We'd love to hear from you!</p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-pink-700 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-pink-100"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Email</h4>
+                                <p class="text-gray-600">hello@nqdance.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-pink-700 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-pink-100"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Phone</h4>
+                                <p class="text-gray-600">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-pink-700 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-pink-100"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Studio</h4>
+                                <p class="text-gray-600">123 Dance Avenue, New York, NY 10001</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="font-semibold text-gray-800 mb-4">Follow NQ Dance</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-pink-700 hover:bg-pink-800 text-pink-100 p-3 rounded-full transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-pink-700 hover:bg-pink-800 text-pink-100 p-3 rounded-full transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-pink-700 hover:bg-pink-800 text-pink-100 p-3 rounded-full transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="bg-pink-700 hover:bg-pink-800 text-pink-100 p-3 rounded-full transition">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <div class="space-y-6">
+                        <!-- WhatsApp Card -->
+                        <div class="bg-white p-8 rounded-xl shadow-lg glow-hover">
+                            <div class="text-center">
+                                <div class="bg-green-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fab fa-whatsapp text-white text-2xl"></i>
+                                </div>
+                                <h3 class="text-2xl cursive text-gray-800 mb-3">Join The Familia</h3>
+                                <p class="text-gray-600 mb-6">Connect with our dance community on WhatsApp for exclusive updates, tips, and behind-the-scenes content!</p>
+                                <a href="https://wa.me/15551234567" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full text-lg font-semibold inline-flex items-center transition">
+                                    <i class="fab fa-whatsapp mr-2"></i>
+                                    Join WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Email Card -->
+                        <div class="bg-white p-8 rounded-xl shadow-lg glow-hover">
+                            <div class="text-center">
+                                <div class="bg-pink-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-envelope text-white text-2xl"></i>
+                                </div>
+                                <h3 class="text-2xl cursive text-gray-800 mb-3">Email Us</h3>
+                                <p class="text-gray-600 mb-6">Have questions or want to discuss private coaching? Send us an email and we'll get back to you soon!</p>
+                                <a href="mailto:contact@nqdance.com" class="bg-pink-700 hover:bg-pink-800 text-white px-8 py-3 rounded-full text-lg font-semibold inline-flex items-center transition">
+                                    <i class="fas fa-envelope mr-2"></i>
+                                    contact@nqdance.com
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <a href="#" class="text-3xl cursive text-white hover:text-pink-400 transition">NQ Dance</a>
+                    <p class="mt-2 text-gray-400">Elevating dance education worldwide</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Explore</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-gray-400 hover:text-pink-400 transition">Home</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-pink-400 transition">About</a></li>
+                            <li><a href="#classes" class="text-gray-400 hover:text-pink-400 transition">Classes</a></li>
+                            <li><a href="#testimonials" class="text-gray-400 hover:text-pink-400 transition">Stories</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Support</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#faq" class="text-gray-400 hover:text-pink-400 transition">FAQ</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-pink-400 transition">Privacy Policy</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-pink-400 transition">Terms</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-pink-400 transition">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Classes</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-pink-400 transition">Samba</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-pink-400 transition">Performance</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-pink-400 transition">Fusion</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-pink-400 transition">Private</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-gray-700 hover:bg-pink-700 text-white p-2 rounded-full transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-gray-700 hover:bg-pink-700 text-white p-2 rounded-full transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-gray-700 hover:bg-pink-700 text-white p-2 rounded-full transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="bg-gray-700 hover:bg-pink-700 text-white p-2 rounded-full transition">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 NQ Dance. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-pink-400 transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-pink-400 transition">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-pink-400 transition">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        
+        // Close mobile menu when clicking on nav links
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Close mobile menu when clicking outside
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                closeMobileMenu();
+            }
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                answer.classList.toggle('active');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+
+        // Scroll animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    fadeInObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        fadeElements.forEach(element => {
+            element.classList.add('opacity-0', 'translate-y-10');
+            fadeInObserver.observe(element);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
