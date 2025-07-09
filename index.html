@@ -180,6 +180,9 @@
                 min-height: 100vh;
                 padding-top: 80px;
             }
+            .hero-overlay {
+                background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.6) 100%);
+            }
             .hero-content {
                 text-align: center;
                 padding: 2rem 1rem;
@@ -194,10 +197,11 @@
                 margin-bottom: 2rem;
             }
             .hero-image {
-                margin-top: 2rem;
-                max-width: 250px;
+                margin-top: 3rem;
+                max-width: 200px;
                 margin-left: auto;
                 margin-right: auto;
+                margin-bottom: 2rem;
             }
         }
     </style>
@@ -243,15 +247,15 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero min-h-screen flex items-center pt-20">
-        <video autoplay muted loop class="hero-video">
-            <source src="/Images/hero section.mp4" type="video/mp4">
+        <video id="hero-video" autoplay muted loop class="hero-video">
+            <source id="video-source" src="/Images/hero section.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="hero-overlay"></div>
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center relative z-10">
             <div class="md:w-1/2 fade-in hero-content">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl cursive neon-pink-text mb-6 md:mb-10">Transform Your Body. Elevate Your Spirit.</h1>
-                <p class="text-lg md:text-xl text-gray-200 mb-6 md:mb-8 hero-description">Online dance classes led by internationally acclaimed choreographer Nubia Quintana. From Rio Carnaval to Radio City — now in your home.</p>
+                <h1 class="text-6xl sm:text-4xl md:text-5xl lg:text-7xl cursive neon-pink-text mb-6 md:mb-10">Your Online home for dance.</h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-6 md:mb-8 hero-description">Online dance classes led by internationally acclaimed choreographer Nubia Quele. From Rio Carnaval to Radio City — now in your home.</p>
                 <a href="#classes" class="btn-primary text-white px-6 md:px-8 py-3 rounded-full text-base md:text-lg font-semibold inline-block">🎥 Start Dancing with Nubia</a>
             </div>
             <div class="md:w-1/2 mt-8 md:mt-12 md:mt-0 flex justify-center fade-in">
@@ -269,10 +273,10 @@
             <h2 class="text-5xl cursive text-center text-gray-800 mb-16 fade-in">About Nubia</h2>
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-12 md:mb-0 fade-in">
-                    <img src="/Images/Logo.jpg" alt="Nubia Quintana" class="glow-hover rounded-lg shadow-xl w-full h-auto">
+                    <img src="/Images/Logo.jpg" alt="Nubia Quele" class="glow-hover rounded-lg shadow-xl w-full h-auto">
                 </div>
                 <div class="md:w-1/2 md:pl-12 fade-in">
-                    <p class="text-lg text-gray-600 mb-6">Nubia Quintana has led over 60 dancers at NBC Universal's Radio City event, performed with Mystic India – The World Tour, and was a Top 40 finalist on So You Think You Can Dance Australia.</p>
+                    <p class="text-lg text-gray-600 mb-6">Nubia Quele has led over 60 dancers at NBC Universal's Radio City event, performed with Mystic India – The World Tour, and was a Top 40 finalist on So You Think You Can Dance Australia.</p>
                     <p class="text-lg text-gray-600 mb-6">Her signature energy, artistry, and feedback make her a sought-after instructor worldwide. With a unique blend of technical precision and emotional expression, Nubia creates transformative dance experiences.</p>
                     <p class="text-lg text-gray-600 mb-8">Trained in multiple disciplines from classical ballet to Brazilian samba, Nubia's teaching philosophy centers on empowerment through movement, helping students discover their unique artistic voice.</p>
                     <a href="#classes" class="btn-secondary px-8 py-3 rounded-full text-lg font-semibold inline-block">Explore Classes</a>
@@ -359,36 +363,36 @@
                         <div class="w-12 h-12 rounded-full bg-pink-700 flex items-center justify-center text-pink-100 mr-4">
                             <i class="fas fa-quote-left text-xl"></i>
                         </div>
-                        <h4 class="text-xl cursive text-gray-800">Isabelle M.</h4>
+                        <h4 class="text-xl cursive text-gray-800">Sasha Lara</h4>
                     </div>
-                    <p class="text-gray-600 italic">"I've never felt more empowered dancing online. Nubia's energy is magic - she sees exactly what each student needs and delivers it with such warmth. After just 3 months, I'm dancing with confidence I never thought possible."</p>
+                    <p class="text-gray-600 italic">"I've had the pleasure of training with Nubia both online and in-person and cannot recommend her enough as a teacher. She will teach you a strong samba base as well as musicality and flow. Her classes are always very fun and challenging. She will assess and provide helpful critique to help you reach your dance goals. 10/10!!!"</p>
                 </div>
                 <div class="testimonial-card rounded-xl p-8 fade-in">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 rounded-full bg-pink-700 flex items-center justify-center text-pink-100 mr-4">
                             <i class="fas fa-quote-left text-xl"></i>
                         </div>
-                        <h4 class="text-xl cursive text-gray-800">Tasha R.</h4>
+                        <h4 class="text-xl cursive text-gray-800">Andressa Gomes de Medeiros</h4>
                     </div>
-                    <p class="text-gray-600 italic">"It's not just dancing — it's a spiritual and physical experience! Nubia creates a space where you can truly express yourself. Her technical corrections are so precise, yet she makes you feel like an artist first. Life-changing."</p>
+                    <p class="text-gray-600 italic">"Training with Nubia was an inspiring and educational journey. I took her workshop a month back and fell in love with how she teaches each step breaking it down, focusing on the cleanliness and ginga of each samba step. She pushes you to better and better. She takes you out of your comfort zone so we can grow. After, I started taking her online classes which is feel of charisma, hard work, and laughs. I recommend working with her 100%. She brings you to the samba raiz, and lifts your spirits and sweat with every repetition."</p>
                 </div>
                 <div class="testimonial-card rounded-xl p-8 fade-in">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 rounded-full bg-pink-700 flex items-center justify-center text-pink-100 mr-4">
                             <i class="fas fa-quote-left text-xl"></i>
                         </div>
-                        <h4 class="text-xl cursive text-gray-800">Marcus L.</h4>
+                        <h4 class="text-xl cursive text-gray-800">Aniela Jakubowski</h4>
                     </div>
-                    <p class="text-gray-600 italic">"As a professional dancer, I've trained with many instructors, but Nubia's approach is revolutionary. Her understanding of movement mechanics combined with her artistic vision is unparalleled. My technique has improved dramatically."</p>
+                    <p class="text-gray-600 italic">"I took private and group classes with Nubia both online and in person, in Boston. I owe all of my technique and improvement to her precious and precise personal feedback, repetition, encouragement, even though I've been training Samba for 8years. When every moment is demonstrated in detail and adjusted to your physicality and the music, you finally understand how to move and dance with style, strength and joy. Thank you, Nubia for helping me feeling empowered and inspired after your classes!"</p>
                 </div>
                 <div class="testimonial-card rounded-xl p-8 fade-in">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 rounded-full bg-pink-700 flex items-center justify-center text-pink-100 mr-4">
                             <i class="fas fa-quote-left text-xl"></i>
                         </div>
-                        <h4 class="text-xl cursive text-gray-800">Sophia K.</h4>
+                        <h4 class="text-xl cursive text-gray-800">Autumn Locklear</h4>
                     </div>
-                    <p class="text-gray-600 italic">"The way Nubia breaks down complex movements makes them accessible to everyone. I started as a complete beginner and now I'm performing with confidence. Her classes are the highlight of my week - joyful, challenging, and transformative."</p>
+                    <p class="text-gray-600 italic">"Nubia explains the instruments and rhythms of the bateria, and how we can represent the drum beats through the timing of our movements. She provides constructive feedback, focusing on timing and placement not perfection. Overall, Nubia encourages her class participants to express our attitudes and feel confident in our bodies."</p>
                 </div>
             </div>
         </div>
@@ -482,7 +486,7 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold text-gray-800">Phone</h4>
-                                <p class="text-gray-600">+1 (555) 123-4567</p>
+                                <p class="text-gray-600">+61405291446</p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -523,7 +527,7 @@
                                 </div>
                                 <h3 class="text-2xl cursive text-gray-800 mb-3">Join The Familia</h3>
                                 <p class="text-gray-600 mb-6">Connect with our dance community on WhatsApp for exclusive updates, tips, and behind-the-scenes content!</p>
-                                <a href="https://wa.me/15551234567" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full text-lg font-semibold inline-flex items-center transition">
+                                <a href="https://wa.me/61405291446" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full text-lg font-semibold inline-flex items-center transition">
                                     <i class="fab fa-whatsapp mr-2"></i>
                                     Join WhatsApp
                                 </a>
@@ -692,6 +696,29 @@
                 }
             });
         });
+    </script>
+    <script>
+        function updateVideoSource() {
+            const video = document.getElementById('hero-video');
+            const videoSource = document.getElementById('video-source');
+            
+            if (window.innerWidth <= 768) {
+                // Mobile view - use mobile-vid-bg.mov
+                videoSource.src = '/Images/mobile-vid-bg.mov';
+            } else {
+                // Desktop view - use hero section.mp4
+                videoSource.src = '/Images/hero section.mp4';
+            }
+            
+            // Reload the video with new source
+            video.load();
+        }
+        
+        // Update video source on page load
+        document.addEventListener('DOMContentLoaded', updateVideoSource);
+        
+        // Update video source when window is resized
+        window.addEventListener('resize', updateVideoSource);
     </script>
 </body>
 </html>
