@@ -29,13 +29,21 @@ body {
     width: 0;
     height: 1px;
     bottom: -2px;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: #f472b6;
     transition: width 0.3s ease;
 }
 
 .nav-link:hover:after {
-    width: 100%;
+    width: 40%;
+}
+
+/* For mobile devices, make it even shorter */
+@media (max-width: 768px) {
+    .nav-link:hover:after {
+        width: 50%;
+    }
 }
 
 .hero {
