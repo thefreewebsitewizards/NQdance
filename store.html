@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store | NQ Dance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <header class="fixed w-full bg-black shadow-sm z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="/Images/Logo.jpg" alt="NQ Dance Logo" class="h-12 w-auto">
+            </a>
+            <div id="desktop-menu" class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium">Home</a>
+                <a href="about.html" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium">About</a>
+                <a href="classes.html" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium">Classes</a>
+                <a href="store.html" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium text-pink-400">Store</a>
+                <a href="index.html#contact" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden fixed top-0 left-0 w-full h-full bg-black z-40">
+            <div class="flex justify-between items-center p-6">
+                <img src="/Images/Logo.jpg" alt="NQ Dance Logo" class="h-12 w-auto">
+                <button id="mobile-menu-close" class="text-white focus:outline-none">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div class="flex flex-col space-y-6 px-6 pt-8">
+                <a href="index.html" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium text-xl mobile-nav-link">Home</a>
+                <a href="about.html" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium text-xl mobile-nav-link">About</a>
+                <a href="classes.html" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium text-xl mobile-nav-link">Classes</a>
+                <a href="store.html" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium text-xl mobile-nav-link text-pink-400">Store</a>
+                <a href="index.html#contact" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium text-xl mobile-nav-link">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Coming Soon Section -->
+    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-50 to-purple-50">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-2xl mx-auto fade-in">
+                <div class="mb-8">
+                    <i class="fas fa-shopping-bag text-6xl text-pink-700 mb-6"></i>
+                </div>
+                <h1 class="text-6xl md:text-7xl cursive text-gray-800 mb-6">Store</h1>
+                <h2 class="text-3xl md:text-4xl font-light text-gray-600 mb-8">Coming Soon</h2>
+                <p class="text-lg md:text-xl text-gray-600 mb-12 leading-relaxed">We're working on something amazing! Our store will feature exclusive NQ Dance merchandise, practice wear, and special dance accessories curated by Nubia herself.</p>
+                
+                <!-- Coming Soon Features -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-white rounded-xl p-6 shadow-lg glow-hover">
+                        <i class="fas fa-tshirt text-3xl text-pink-700 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Dance Apparel</h3>
+                        <p class="text-gray-600">Premium practice wear and performance outfits</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-lg glow-hover">
+                        <i class="fas fa-music text-3xl text-pink-700 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Accessories</h3>
+                        <p class="text-gray-600">Dance shoes, bags, and training equipment</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-lg glow-hover">
+                        <i class="fas fa-gift text-3xl text-pink-700 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Exclusive Items</h3>
+                        <p class="text-gray-600">Limited edition NQ Dance merchandise</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+    <footer class="bg-black text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center">
+                <div class="mb-8 lg:mb-0 lg:w-1/2">
+                    <a href="#" class="text-3xl cursive text-white hover:text-pink-400 transition">NQ Dance</a>
+                    <p class="mt-2 text-gray-300">Elevating dance education worldwide</p>
+                </div>
+                <div class="flex gap-16 lg:w-1/2 lg:justify-end">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4 text-white">Explore</h4>
+                        <ul class="space-y-2">
+                            <li><a href="index.html#home" class="text-gray-300 hover:text-pink-400 transition">Home</a></li>
+                            <li><a href="about.html" class="text-gray-300 hover:text-pink-400 transition">About</a></li>
+                            <li><a href="classes.html" class="text-gray-300 hover:text-pink-400 transition">Classes</a></li>
+                            <li><a href="store.html" class="text-gray-300 hover:text-pink-400 transition">Store</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4 text-white">Classes</h4>
+                        <ul class="space-y-2">
+                            <li><a href="classes.html" class="text-gray-300 hover:text-pink-400 transition">Samba</a></li>
+                            <li><a href="classes.html" class="text-gray-300 hover:text-pink-400 transition">Performance</a></li>
+                            <li><a href="classes.html" class="text-gray-300 hover:text-pink-400 transition">Fusion</a></li>
+                            <li><a href="classes.html" class="text-gray-300 hover:text-pink-400 transition">Private</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-300">© 2023 NQ Dance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        
+        // Close mobile menu when clicking on nav links
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Close mobile menu when clicking outside
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                closeMobileMenu();
+            }
+        });
+
+        // Scroll animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    fadeInObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        fadeElements.forEach(element => {
+            element.classList.add('opacity-0', 'translate-y-10');
+            fadeInObserver.observe(element);
+        });
+    </script>
+</body>
+</html>
