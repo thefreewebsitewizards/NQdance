@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classes | NQ Dance</title>
+    <title>NQ Dance | Elite Online Dance Instruction</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,15 +15,15 @@
     <!-- Navigation -->
     <header class="fixed w-full bg-black shadow-sm z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center">
+            <a href="#" class="flex items-center">
                 <img src="/Images/Logo.jpg" alt="NQ Dance Logo" class="h-12 w-auto">
             </a>
             <div id="desktop-menu" class="hidden md:flex space-x-8">
                 <a href="index.html" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium">Home</a>
                 <a href="about.html" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium">About</a>
-                <a href="classes.html" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium text-pink-400">Classes</a>
+                <a href="classes.html" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium">Classes</a>
                 <a href="store.html" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium">Store</a>
-                <a href="contact.html" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium">Contact</a>
+                <a href="contact.html" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium text-pink-400">Contact</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
                 <i class="fas fa-bars text-2xl"></i>
@@ -38,32 +38,61 @@
                     <i class="fas fa-times text-2xl"></i>
                 </button>
             </div>
-            <div class="flex flex-col space-y-6 px-6 pt-8 items-center">
-                <a href="index.html#home" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium text-xl mobile-nav-link">Home</a>
+             <div class="flex flex-col space-y-6 px-6 pt-8 items-center">
+                <a href="index.html" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium text-xl mobile-nav-link">Home</a>
                 <a href="about.html" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium text-xl mobile-nav-link">About</a>
                 <a href="classes.html" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium text-xl mobile-nav-link">Classes</a>
                 <a href="store.html" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium text-xl mobile-nav-link">Store</a>
                 <a href="contact.html" class="nav-link text-white hover:text-pink-400 font-league-spartan font-medium text-xl mobile-nav-link">Contact</a>
             </div>
-        </div>
+   </div>
     </header>
 
-    <!-- Coming Soon Section -->
-    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-50 to-purple-50">
-        <div class="container mx-auto px-6 text-center">
-            <div class="max-w-2xl mx-auto fade-in">
-                <div class="mb-8 mt-24">
-                    <i class="fas fa-music text-6xl text-pink-700 mb-6"></i>
-                </div>
-                <h1 class="text-4xl md:text-7xl cursive text-gray-800 mb-6">Dance With Purpose</h1>
-                <h2 class="text-3xl md:text-4xl font-light text-gray-600 mb-8">Coming Soon</h2>
-                <p class="text-lg md:text-xl text-gray-600 mb-12 leading-relaxed">We're preparing an incredible dance experience! Our classes will feature Samba, Performance techniques, Fusion styles, and personalized private coaching sessions led by internationally acclaimed choreographer Nubia Quele.</p>
+    <!-- Contact -->
+    <section id="contact" class="py-20 bg-pink-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl cursive text-center text-gray-800 mb-16 fade-in mt-12">Connect with Us</h2>
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="fade-in">
+                        <!-- Email Card -->
+                        <div class="bg-white p-8 rounded-xl shadow-lg glow-hover">
+                            <div class="text-center">
+                                <div class="bg-pink-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-envelope text-white text-2xl"></i>
+                                </div>
+                                <h3 class="text-2xl cursive text-gray-800 mb-3">Email Us</h3>
+                                <p class="text-gray-600 mb-6">Have questions or want to discuss private coaching? Send us an email and we'll get back to you soon!</p>
+                                <a href="mailto:contact@nqdance.com" class="bg-pink-700 hover:bg-pink-800 text-white px-8 py-3 rounded-full text-lg font-semibold inline-flex items-center transition">
+                                    <i class="fas fa-envelope mr-2"></i>
+                                   sambawithnubia@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- WhatsApp Card -->
+                        <div class="bg-white p-8 rounded-xl shadow-lg glow-hover">
+                            <div class="text-center">
+                                <div class="bg-green-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-phone-alt text-white text-2xl"></i>
+                                </div>
+                                <h3 class="text-2xl cursive text-gray-800 mb-3">Call Us</h3>
+                                <p class="text-gray-600 mb-6">"Got questions or curious about private coaching? Call us or Connect with our dance community on WhatsApp Join The Familia </p>
+                                <a href="https://wa.me/61405291446" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full text-lg font-semibold inline-flex items-center transition">
+                                    <i class="fas fa-phone-alt mr-2"></i>
+                                    +61405291446
+                                </a>
+                            </div>
+                        </div>
+
+                
+                
             </div>
         </div>
     </section>
 
-     <!-- Footer -->
- <footer class="bg-black text-white py-8">
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8">
         <div class="container mx-auto px-6">
              <div class="mb-8 text-center">
                     <a href="#" class="text-3xl cursive text-white hover:text-pink-400 transition">NQ Dance</a>
@@ -107,6 +136,18 @@
             }
         });
 
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                answer.classList.toggle('active');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+
         // Scroll animations
         const fadeElements = document.querySelectorAll('.fade-in');
         
@@ -125,79 +166,41 @@
             element.classList.add('opacity-0', 'translate-y-10');
             fadeInObserver.observe(element);
         });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+    <script>
+        function updateVideoSource() {
+            const video = document.getElementById('hero-video');
+            const videoSource = document.getElementById('video-source');
+            
+            if (window.innerWidth <= 768) {
+                // Mobile view - use mobile-vid-bg.mov
+                videoSource.src = '/Images/phone.mov';
+            } else {
+                videoSource.src = '/Images/desktop.mov';
+            }
+            
+            // Reload the video with new source
+            video.load();
+        }
+        
+        // Update video source on page load
+        document.addEventListener('DOMContentLoaded', updateVideoSource);
+        
+        // Update video source when window is resized
+        window.addEventListener('resize', updateVideoSource);
     </script>
 </body>
-</html>
-
-
-<script>
-// Load testimonials from a JSON file or local storage
-async function loadTestimonials() {
-    try {
-        // Option A: Load from JSON file
-        const response = await fetch('./testimonials.json');
-        const testimonials = await response.json();
-        
-        // Option B: Load from localStorage (for manual updates)
-        // const testimonials = JSON.parse(localStorage.getItem('testimonials') || '[]');
-        
-        displayTestimonials(testimonials);
-    } catch (error) {
-        console.error('Failed to load testimonials:', error);
-        // Fallback to hardcoded testimonials
-        displayFallbackTestimonials();
-    }
-}
-
-function displayTestimonials(testimonials) {
-    const container = document.getElementById('testimonials-container');
-    container.innerHTML = '';
-    
-    testimonials.forEach(testimonial => {
-        const testimonialCard = `
-            <div class="testimonial-card rounded-xl p-8 fade-in">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 rounded-full bg-pink-700 flex items-center justify-center text-pink-100 mr-4">
-                        <i class="fas fa-quote-left text-xl"></i>
-                    </div>
-                    <h4 class="text-xl cursive text-gray-800">${testimonial.author_name}</h4>
-                </div>
-                <p class="text-gray-600 italic">"${testimonial.text}"</p>
-                <div class="flex items-center mt-4">
-                    <div class="flex text-yellow-400">
-                        ${generateStars(testimonial.rating)}
-                    </div>
-                    <span class="ml-2 text-sm text-gray-500">${testimonial.relative_time_description}</span>
-                </div>
-            </div>
-        `;
-        container.innerHTML += testimonialCard;
-    });
-}
-
-function generateStars(rating) {
-    let stars = '';
-    for (let i = 1; i <= 5; i++) {
-        stars += i <= rating ? '<i class="fas fa-star"></i>' : '<i class="far fa-star"></i>';
-    }
-    return stars;
-}
-
-function displayFallbackTestimonials() {
-    // Your current hardcoded testimonials as fallback
-    const fallbackTestimonials = [
-        {
-            author_name: "Sarah M.",
-            text: "I've been taking online classes with Nubia for 4+ years and I have grown more in that time than the first 20 years. Nubia teaches a specific samba technique and very clearly describes and demonstrates how to do it.",
-            rating: 5,
-            relative_time_description: "8 months ago"
-        }
-        // Add more fallback testimonials...
-    ];
-    
-    displayTestimonials(fallbackTestimonials);
-}
-
-// Load testimonials when page loads
-document.addEventListener('DOMContentLoaded', loadTestimonials);
-</script>
