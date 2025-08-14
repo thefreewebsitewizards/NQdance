@@ -51,14 +51,13 @@
     <!-- Hero Section -->
     <section id="home" class="hero min-h-screen flex items-center pt-20">
         <video id="hero-video" autoplay muted loop class="hero-video">
-            <source id="video-source" src="Images/hero section.mp4" type="video/mp4">
+            <source id="video-source" src="Images/Vidsss.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="hero-overlay"></div>
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-center relative z-10">
             <div class="md:w-1/2 fade-in hero-content text-center">
-                <h1 class="text-6xl sm:text-4xl md:text-5xl lg:text-7xl text-white mb-6 md:mb-10">NQ Dance</h1>
-                <p class="text-lg md:text-xl text-gray-200 mb-6 md:mb-8 hero-description">Dance with internationally acclaimed dancer & choreographer Nubia Quele Santos. From Rio Carnaval to Radio City — now in your home.</p>
+                <p class="text-lg md:text-4xl text-gray-200 mb-6 md:mb-8 hero-description">Dance with internationally acclaimed dancer & choreographer Nubia Quele Santos. From Rio Carnaval to Radio City — now in your home.</p>
                 <a href="contact.html" class="btn-primary text-white px-6 md:px-8 py-3 rounded-full text-base md:text-lg font-semibold inline-block">Start Dancing with Nubia</a>
             </div>
         </div>
@@ -161,10 +160,12 @@
             const videoSource = document.getElementById('video-source');
             
             if (window.innerWidth <= 768) {
-                // Mobile view - use mobile-vid-bg.mov
-                videoSource.src = '/Images/phone.mov';
+                // Mobile view - use phone.mov
+                videoSource.src = 'Images/vidsss.mp4';
+
             } else {
-                videoSource.src = '/Images/desktop.mov';
+                // Desktop view - use desktop.mov
+                videoSource.src = 'Images/vidsss.mp4';
             }
             
             // Reload the video with new source
